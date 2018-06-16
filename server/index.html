@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+    </head>
+    <body>
+        <div id="div1">난 div1</div>
+        <button type="button"> 눌러봐~ </button>
+        <script>
+            // dom 의 최상위 -> document 
+            // window 브라우져 최상위
+            // <button type="button" onclick="alert(1)"> 눌러봐~ </button>   onclick="alert(1)" 자바스크립트
+
+        window.onload = function(){
+            //alert(1); // window 생략
+            window.alert(2); 
+            //window.document.getElementById('div1');
+            //alert(window.document.getElementById('div1'));
+
+            document.querySelector('button').onclick = function (){
+                
+            }
+        }
+        ////////////////////////////
+        var test22 = function(){
+            alert("난 test변수가 맞긴하지만 함수다!");
+        }
+        test22 = function(){
+            alert("난 두번째");
+        }
+
+         //test22();
+         ////////////////////////////
+
+        
+
+        function test(){
+            alert('난 테스트');
+        }
+        // 로드 되고나서 렌더링
+       //javascript 오버로딩안됨
+        </script>
+    </body>
+</html>
