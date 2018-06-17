@@ -4,21 +4,47 @@
         <title>test</title>
     </head>
     <body>
-        <div id="div1">난 div1</div>
-        <button type="button"> 눌러봐~ </button>
+        <div id="div1">난 div1</div> 
+        ID : <input type="text" id="id"><br>
+        PWD : <input type="PASSWORD" id="pwd"><br>
+        <button type="button"> 로그인~ </button>
         <script>
+            function ElementTest(id){
+                this.obj = document.getElementById(id);
+                //this == window  true
+                this.getV = function(){
+                    return this.obj.value;
+                }
+                this.getId = function(){
+                    return this.obj.id;
+                }
+                this.getObj = function(){
+                    return this.obj;
+                }
+            }
+
+            
             // dom 의 최상위 -> document 
             // window 브라우져 최상위
             // <button type="button" onclick="alert(1)"> 눌러봐~ </button>   onclick="alert(1)" 자바스크립트
 
         window.onload = function(){
             //alert(1); // window 생략
-            window.alert(2); 
+            //window.alert(2); 
             //window.document.getElementById('div1');
             //alert(window.document.getElementById('div1'));
 
             document.querySelector('button').onclick = function (){
+                var idObj = document.getElementById('id');
+                var pwdObj = document.getElementById('pwd');
+                var divObj = document.getElementById('div1');
                 
+                //divObj.innerHTML = '입력하신 아이디 : ' + idObj.value;
+                //divObj.innerHTML += '입력하신 패스워드 : ' + pwdObj.value;
+                var a = new ElementTest("id").getV();
+                var b = new ElementTest("pwd").getV();
+                divObj.innerHTML = '입력하신 아이디 : ' + a;
+                divObj.innerHTML += '입력하신 패스워드 : ' + b;
             }
         }
         ////////////////////////////
